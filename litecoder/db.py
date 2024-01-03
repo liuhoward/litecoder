@@ -15,7 +15,7 @@ def connect_db(db_path):
         db_path (str)
     Returns: engine, session
     """
-    url = URL(drivername='sqlite', database=db_path)
+    url = URL.create(drivername='sqlite', database=db_path)
     engine = create_engine(url)
 
     # Fix transaction bugs in pysqlite.
